@@ -1,13 +1,12 @@
-
 import dayjs from 'dayjs'
 
-function Cards(props) {
-    // const skills = ["Javascript", "React", "Nodejs"];
+function JobCard(props) {
+
     const date1 = dayjs(Date.now());
     const diffInDays = date1.diff(props.postedOn,'day');
   return (
-    <div className='mx-40 mb-4 '>
-        <div className='flex justify-between items-center px-6 py-4 bg-blue-100 rounded-md border border-black shadow-lg hover:border-blue-500 hover:translate-y-1 hover:scale-103'>
+    <div className='mx-40 mb-4'>
+        <div className='flex justify-between items-center px-6 py-4 bg-zinc-200 rounded-md border border-black shadow-lg hover:border-blue-500 hover:translate-y-1 hover:scale-103'>
             <div className='flex flex-col items-start gap-3'>
                 <h1 className='text-lg font-semibold'>{props.title} - {props.company}</h1>
                 <p>{props.type} &#x2022; {props.experience} &#x2022; {props.location}</p>
@@ -29,4 +28,4 @@ function Cards(props) {
   )
 }
 
-export default Cards
+export default JobCard

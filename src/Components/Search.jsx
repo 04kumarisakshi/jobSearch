@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import  { useState } from 'react'
 
-function Searchbar(props) {
+export function Search(props) {
     const [jobCriteria, setJobCriteria] = useState({
         title: "",
         locaion: "",
@@ -14,7 +14,7 @@ function Searchbar(props) {
             [e.target.name]: e.target.value
         }))
     }
-
+console.log(jobCriteria);
     const search = async() => {
         await props.fetchJobsCustom(jobCriteria);
     }
@@ -54,4 +54,3 @@ function Searchbar(props) {
   )
 }
 
-export default Searchbar

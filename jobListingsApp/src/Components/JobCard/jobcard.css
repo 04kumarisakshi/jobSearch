@@ -1,0 +1,133 @@
+.cardcontent {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+@media screen and (max-width: 767px) {
+  .cardcontent {
+    flex-direction: column;
+    position: relative;
+    height: max-content;
+  }
+
+  .css-46bh2p-MuiCardContent-root:last-child {
+    padding: 50px 10px;
+  }
+
+  .icontexts {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .titleInfo {
+    flex-wrap: wrap;
+  }
+
+  .companyTitle {
+    font-size: 20px;
+  }
+
+  .new, .featured {
+    font-size: 16px;
+  }
+
+  .shorts {
+    font-size: 18px;
+  }
+  
+
+
+  .logoAndTextWrapper img {
+    width: 60px;
+    position: absolute;
+    top: -30px;
+  }
+}
+
+.logoAndTextWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.jobInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.titleInfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.new,
+.featured {
+  color: white;
+  background-color: hsl(180, 29%, 50%);
+  border-radius: 15px;
+  padding: 3px 6px;
+}
+
+.featured {
+  background-color: hsl(180, 14%, 20%);
+}
+
+.jobtitle {
+  color: hsl(180, 14%, 20%);
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.companyTitle {
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.icontexts {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  margin-right: 25px;
+  justify-content: flex-end;
+}
+
+
+.icon {
+  background-color: hsl(180, 31%, 95%);
+  color: hsl(180, 29%, 50%);
+  font-weight: 700;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.icon:hover {
+  color: black;
+}
+
+.shorts {
+  color: hsl(180, 8%, 52%);
+}
+
+.card {
+  border-left: 6px solid hsl(180, 29%, 50%);
+}
+
+.icontexts p:hover {
+  cursor: pointer;
+}
+
+
+.activeBackground {
+  background-color: hsl(180, 29%, 50%);
+  color: white;
+}

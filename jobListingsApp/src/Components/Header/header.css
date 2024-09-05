@@ -1,0 +1,18 @@
+.headerContainer {
+  background-image: url(../../../public/images/bg-header-desktop.svg);
+  background-size: cover;
+  height: 150px;
+  background-color: var(--darkCyan);
+  background-repeat: repeat-x;
+  position: relative;
+}
+
+@media screen and (max-width: 600px) {
+
+  .headerContainer {
+    background-image: url(../../../public/images/bg-header-mobile.svg);
+    background-size: contain;
+    background-repeat:repeat-x;
+  }
+
+}

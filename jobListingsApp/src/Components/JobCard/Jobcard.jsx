@@ -2,62 +2,54 @@ import { Card, CardContent } from "@mui/material";
 import React from "react";
 import "./jobcard.css";
 
-function Jobcard({ jobs }, props) {
-
-  function clickFilterItem(event) {
-    event.currentTarget.classList.toggle('activeBackground');
-    const whichClicked = event.target.innerText;
-  }
+function Jobcard({ jobs, indexNumber }) {
+  // Handle the click event to toggle the active background class
+  const clickFilterItem = (event) => {
+    event.currentTarget.classList.toggle("activeBackground");
+    const clickedItem = event.target.innerText;
+    // Optional: Handle the clicked item (e.g., filter jobs based on clicked item)
+    console.log("Clicked filter item:", clickedItem);
+  };
 
   return (
     <>
-      {jobs.map((job) => {
-        let itemsArray = [job.role];
-        itemsArray.push(job.level);
-        itemsArray = itemsArray.concat(job.tools);
-        itemsArray = itemsArray.concat(job.languages);
-
-        itemsArray = itemsArray.filter((item) => {
-          return typeof item === "string";
-        });
+      {jobs.map((job, index) => {
+        // Gather role, level, tools, and languages into a single array
+        const itemsArray = [job.role, job.level, ...job.tools, ...job.languages].filter(Boolean);
 
         return (
           <Card
-            key={job.id}
-            className={props.indexNumber < 2 && "card"}
+            key={job.id} // Use job.id as the unique key
+            className={indexNumber < 2 ? "card" : ""}
             sx={{ margin: { xs: "60px 0", md: "20px 0" }, overflow: "visible" }}
           >
             <CardContent className="cardcontent">
               <div className="logoAndTextWrapper">
-                <img src={job.logo} alt="company logo" />
+                <img src={job.logo} alt={`${job.company} logo`} className="companyLogo" />
                 <div className="jobInfo">
                   <div className="titleInfo">
                     <p className="companyTitle">{job.company}</p>
-                    {job.new && <p className="new">NEW!</p>}
-                    {job.featured && <p className="featured">FEATURED</p>}
+                    {job.new && <span className="new">NEW!</span>}
+                    {job.featured && <span className="featured">FEATURED</span>}
                   </div>
-                  <p className="jobtitle">{job.position}</p>
-                  <p className="shorts">
-                    {job.postedAt} &nbsp; · &nbsp; {job.contract} &nbsp; ·
-                    &nbsp;
-                    {job.location}
+                  <p className="jobTitle">{job.position}</p>
+                  <p className="jobDetails">
+                    {job.postedAt} &nbsp; · &nbsp; {job.contract} &nbsp; · &nbsp; {job.location}
                   </p>
                 </div>
               </div>
-              <div className="icontexts">
-                {itemsArray.map((item) => {
-                  const randomNumber = Math.random() * (100000 - 20) + 20;
 
-                  return (
-                    <p
-                      key={randomNumber}
-                      className="icon"
-                      onClick={clickFilterItem}
-                    >
-                      {item}
-                    </p>
-                  );
-                })}
+              {/* Render role, level, tools, and languages as clickable items */}
+              <div className="icontexts">
+                {itemsArray.map((item, i) => (
+                  <p
+                    key={`${job.id}-${i}`} // Use a combination of job.id and index for uniqueness
+                    className="icon"
+                    onClick={clickFilterItem}
+                  >
+                    {item}
+                  </p>
+                ))}
               </div>
             </CardContent>
           </Card>
@@ -66,4 +58,5 @@ function Jobcard({ jobs }, props) {
     </>
   );
 }
+
 export default Jobcard;

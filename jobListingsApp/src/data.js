@@ -149,4 +149,34 @@ export const data = [
     "languages": ["JavaScript"],
     "tools": ["React", "Sass"]
   },
+  {
+    "id": 11,
+    "company": "Eyecam",
+    "logo": "./images/eyecam-co.svg",
+    "new": false,
+    "featured": false,
+    "position": "Full Stack Engineer",
+    "role": "Fullstack",
+    "level": "Midweight",
+    "postedAt": "3w ago",
+    "contract": "Full Time",
+    "location": "Worldwide",
+    "languages": ["JavaScript", "Python"],
+    "tools": ["Django"]
+  },
+  {
+    "id": 12,
+    "company": " Air Filter ",
+    "logo": "./images/the-air-filter-company.svg",
+    "new": false,
+    "featured": false,
+    "position": "Front-end Dev",
+    "role": "Frontend",
+    "level": "Junior",
+    "postedAt": "1mo ago",
+    "contract": "Part Time",
+    "location": "Worldwide",
+    "languages": ["JavaScript"],
+    "tools": ["React", "Sass"]
+  },
 ];
